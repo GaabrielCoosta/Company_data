@@ -1,3 +1,27 @@
+"""
+MIT License
+
+Copyright (c) 2022 Gabriel Costa Andrade
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+"""
+
 import sqlite3
 
 banco = sqlite3.connect("Dados.db")
@@ -31,6 +55,7 @@ for x in a:
     print(x)
 print(f"-=-"*40)
 
+
 """
 B) Listar todos os campos de funcionários ordenados por cidade
 """
@@ -40,6 +65,7 @@ print(f"\033[1:31mA saída de B:\033[m")
 for x in b:
     print(x)
 print(f"-=-"*40)
+
 
 """
 C) Liste os funcionários que têm salário superior a R$ 1000,00 ordenados pelo nome completo
@@ -51,6 +77,7 @@ for x in c:
     print(x)
 print(f"-=-"*40)
 
+
 """
 D) Liste a data de nascimento e o primeiro nome dos funcionários ordenados do mais novo para o mais velho
 """
@@ -60,6 +87,7 @@ print(f"\033[1:31mA saída de D:\033[m")
 for x in d:
     print(x)
 print(f"-=-"*40)
+
 
 '''
 E) Liste o total da folha de pagamento
@@ -74,10 +102,12 @@ for x in e:
     print("R$ {:.2f}".format(x[0]))
 print(f"-=-"*40)
 
+
 """ 
 - CRIEI A TABELA DE DEPARTAMENTOS
 """
 #cursor.execute("CREATE TABLE Departamentos (idDepartamentos integer PRIMARY KEY, nomeDepartamento text)")
+
 
 """
 -INSERINDO DADOS NA TABELA DAPARTAMENTOS
@@ -90,6 +120,7 @@ listadedepartamentos=[('1','DIREÇÃO'),
 
 #cursor.executemany("""INSERT INTO Departamentos VALUES (?,?)""", listadedepartamentos)
 #banco.commit()
+
 
 """
 F) Liste o nome, o nome do depatarmento, e a função de todos funcionarios 
@@ -109,6 +140,7 @@ for x in f:
     print(x)
 print(f"-=-"*40)
 
+
 """
 G) Liste a quantidade de funcionários dessa empresa 
 """
@@ -123,10 +155,10 @@ for x in g:
     print(x[0])
 print(f"-=-"*40)
 
+
 """
 H) Liste o nome do departamento e do funcionário ordenado por departamento e funcionário
 """
-
 sql = """SELECT
    Departamentos.nomeDepartamento,
    Funcionarios.priNome
